@@ -1,0 +1,640 @@
+:root {
+    --blue-dark: #001D3D;
+    --blue-light: #0077B6;
+    --red-main: #E63946;
+    --white: #F1FAEE;
+    --accent: #CAF0F8;
+}
+
+body {
+    background-color: var(--blue-dark);
+    background-image: radial-gradient(circle at 20% 30%, rgba(0, 119, 182, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(230, 57, 70, 0.1) 0%, transparent 40%);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* Título Estilo Graffiti/Moderno */
+.hero-title {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 5rem;
+    letter-spacing: 4px;
+    color: var(--white);
+    text-shadow: 4px 4px var(--red-main), 8px 8px var(--blue-light);
+    transform: skew(-5deg);
+}
+
+/* Contenedor de Tarjetas Dinámicas */
+.card-barber {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: none;
+    border-radius: 0px;
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+    /* Corte diagonal */
+    transition: all 0.4s ease;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.card-barber:hover {
+    transform: scale(1.03) rotate(1deg);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Imagen con Filtro de Color */
+.img-wrap {
+    position: relative;
+    height: 280px;
+    overflow: hidden;
+}
+
+.img-wrap::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(to bottom, transparent, var(--blue-dark)); */
+}
+
+.img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(40%) contrast(120%);
+}
+
+/* Detalles del Servicio */
+.service-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    color: var(--accent);
+    margin: 0;
+}
+
+.price-tag {
+    background: var(--red-main);
+    color: white;
+    padding: 5px 20px;
+    font-weight: 800;
+    display: inline-block;
+    transform: skew(-15deg);
+    margin: 10px 0;
+}
+
+.time-info {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--blue-light);
+    font-weight: bold;
+}
+
+/* Botón de Acción */
+.btn-booking {
+    background: var(--blue-light);
+    border: none;
+    color: white;
+    font-weight: 800;
+    padding: 15px;
+    width: 100%;
+    text-transform: uppercase;
+    transition: 0.3s;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+
+.btn-booking:hover {
+    background: var(--red-main);
+    color: white;
+    box-shadow: 0 0 20px rgba(230, 57, 70, 0.6);
+}
+
+/* Elementos Decorativos de Fondo (Estilo imagen referencia) */
+.bg-lines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.05;
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+:root {
+    --barber-red: #E63946;
+    --barber-blue: #0056b3;
+    --barber-white: #ffffff;
+    --dark-bg: #121212;
+    /* Fondo negro elegante */
+}
+
+/* BARRA SUPERIOR ANIMADA (EL DETALLE DEL BARBER POLE) */
+.navbar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    /* Una línea delgada muy pro */
+    background: repeating-linear-gradient(-45deg,
+            var(--barber-red) 0%, var(--barber-red) 10%,
+            var(--barber-white) 10%, var(--barber-white) 20%,
+            var(--barber-blue) 20%, var(--barber-blue) 30%);
+    background-size: 200% 100%;
+    animation: barberFlow 5s linear infinite;
+}
+
+.navbar {
+    /* background: #001D3D; */
+    background: rgba(0, 22, 56, 0.95) !important;
+    /* Fondo oscuro transparente */
+    backdrop-filter: blur(10px);
+    /* Efecto esmerilado */
+    border-bottom: 2px solid #BF953F;
+    /* Línea dorada delgada abajo */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+}
+
+@keyframes barberFlow {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+/* LOGO DORADO MEJORADO */
+.navbar-brand {
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    font-size: 2.2rem !important;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, #BF953F 20%, #FCF6BA 45%, #B38728 70%, #AA771C 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 0px #000);
+    transform: skew(-10deg);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navbar-brand:hover {
+    transform: skew(-10deg) scale(1.1) rotate(-2deg);
+    filter: brightness(1.3) drop-shadow(4px 4px 0px #000);
+}
+
+/* ENLACES DEL MENÚ MODERNOS */
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #909090 !important;
+    margin: 0 10px;
+    position: relative;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+/* Animación de línea dorada al pasar el mouse */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #BF953F;
+    left: 0;
+    bottom: -5px;
+    transition: 0.4s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #BF953F !important;
+}
+
+/* BOTÓN RESERVAR CON PULSACIÓN */
+.btn-reservar {
+    background: #bf943f88 !important;
+    color: #000 !important;
+    font-weight: 800 !important;
+    border-radius: 0px !important;
+    /* Estilo vintage cuadrado */
+    transform: skew(-10deg);
+    padding: 8px 20px !important;
+    box-shadow: 4px 4px 0px #000;
+    animation: pulseGold 2s infinite;
+}
+
+@keyframes pulseGold {
+    0% {
+        box-shadow: 0 0 0 0 rgba(191, 149, 63, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(191, 149, 63, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(191, 149, 63, 0);
+    }
+}
+
+/* MENU MÓVIL */
+.navbar-toggler {
+    border: 1px solid #BF953F !important;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+    /* Hace la hamburguesa blanca */
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: #121212;
+        padding: 20px;
+        text-align: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+/* --- DISEÑO LUXURY MODERN --- */
+.modern-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2rem, 8vw, 3.1rem);
+    background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 10px;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.5));
+}
+
+.title-underline {
+    width: 60px;
+    height: 4px;
+    background: #BF953F;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #BF953F;
+}
+
+/* LA TARJETA PREMIUM */
+.premium-card {
+    position: relative;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    transition: all 0.5s ease;
+    overflow: hidden;
+}
+
+/* MARCO DE VIDRIO PARA LA IMAGEN */
+.card-glass-frame {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    aspect-ratio: 3/4;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card-glass-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+/* ETIQUETA NEW CON ANIMACIÓN */
+.new-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    background: #CE1126;
+    /* Rojo México */
+    color: white;
+    font-family: 'Bebas Neue';
+    font-size: 1.1rem;
+    padding: 2px 15px;
+    border-radius: 50px;
+    box-shadow: 0 0 15px rgba(206, 17, 38, 0.8);
+    animation: pulseNew 2s infinite;
+}
+
+@keyframes pulseNew {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(206, 17, 38, 0.7);
+    }
+
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 10px rgba(206, 17, 38, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(206, 17, 38, 0);
+    }
+}
+
+/* INFO DEBAJO DE LA FOTO */
+.premium-info {
+    padding-top: 15px;
+    text-align: left;
+}
+
+.barber-name {
+    font-size: 0.65rem;
+    color: #BF953F;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.corte-type {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: #fff;
+    margin: 0;
+}
+
+/* EFECTOS AL PASAR EL MOUSE (HOVER) */
+.premium-card:hover {
+    background: rgba(191, 149, 63, 0.1);
+    border-color: #BF953F;
+    transform: translateY(-10px);
+}
+
+.premium-card:hover img {
+    transform: scale(1.15) rotate(2deg);
+}
+
+/* Brillo que cruza la tarjeta */
+.card-reflection {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: skewX(-25deg);
+    transition: 0.5s;
+}
+
+.premium-card:hover .card-reflection {
+    left: 150%;
+    transition: 0.5s;
+}
+
+
+
+
+
+/* <!-- ESTILO DE CALENDARIO --> */
+
+:root {
+    --bg: #022a55;
+    --card: #062362;
+    --muted: #AAB4D4;
+    --text: #EAF0FF;
+    --border: rgba(255, 255, 255, .08);
+    --accent: #24d11e;
+}
+
+/* body {
+background-color: #021529;
+background-image: radial-gradient(circle at 20% 30%, rgba(0, 119, 182, 0.15) 0%, transparent 40%),
+radial-gradient(circle at 80% 70%, rgba(230, 57, 70, 0.1) 0%, transparent 40%);
+color: var(--white);
+font-family: 'Montserrat', sans-serif;
+overflow-x: hidden;
+ } */
+
+.card-pro {
+    background: linear-gradient(180deg, rgba(255, 255, 255, .04), rgba(255, 255, 255, .02));
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .25);
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, .03);
+    font-size: .9rem;
+}
+
+.btn-soft {
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 12px;
+}
+
+.btn-soft:hover {
+    background: rgba(255, 255, 255, .10);
+}
+
+#calendar {
+    padding: 12px;
+}
+
+/* FullCalendar en modo dark */
+.fc {
+    color: var(--text);
+}
+
+.fc .fc-toolbar-title {
+    font-weight: 800;
+    letter-spacing: .2px;
+}
+
+.fc .fc-button {
+    background: rgba(255, 255, 255, .06) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text) !important;
+    border-radius: 12px !important;
+}
+
+.fc .fc-button:hover {
+    background: rgba(255, 255, 255, .10) !important;
+}
+
+.fc .fc-daygrid-day-frame {
+    background: rgba(255, 255, 255, .01);
+}
+
+.fc .fc-scrollgrid {
+    border-color: var(--border);
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+    border-color: var(--border);
+}
+
+.fc .fc-daygrid-day-number {
+    color: var(--muted);
+}
+
+.fc .fc-col-header-cell-cushion {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.fc a {
+    text-decoration: none;
+}
+
+.list-item {
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 10px;
+    background: rgba(255, 255, 255, .03);
+}
+
+.badge-status {
+    border-radius: 999px;
+    padding: 6px 10px;
+    border: 1px solid var(--border);
+    background: rgba(0, 0, 0, .2);
+    font-weight: 700;
+    font-size: .78rem;
+}
+
+/* Modal dark */
+.modal-content {
+    background: #0f172a;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    color: var(--text);
+}
+
+.form-select,
+.form-control {
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-radius: 12px;
+}
+
+.form-select:focus,
+.form-control:focus {
+    box-shadow: none;
+    border-color: rgba(230, 57, 70, .55);
+}
+
+
+
+
+
+
+
+/* Badges PRO por estatus */
+.badge-status {
+    padding: .35rem .65rem;
+    border-radius: 999px;
+    font-weight: 800;
+    letter-spacing: .4px;
+    font-size: .78rem;
+    border: 1px solid rgba(255, 255, 255, .08);
+    background: rgba(255, 255, 255, .04);
+    color: #E6EEF8;
+}
+
+.badge-pend {
+    background: rgba(233, 196, 106, .16);
+    border-color: rgba(233, 196, 106, .35);
+    color: #F6D98B;
+}
+
+.badge-comp {
+    background: rgba(42, 157, 143, .16);
+    border-color: rgba(42, 157, 143, .35);
+    color: #7FE7DA;
+}
+
+.badge-canc {
+    background: rgba(230, 57, 70, .16);
+    border-color: rgba(230, 57, 70, .35);
+    color: #FF9AA3;
+}
+
+/* Quita el circulito (dot) de FullCalendar */
+.fc-daygrid-event-dot {
+    display: none !important;
+}
+
+/* Opcional: que el evento se vea más como “píldora” */
+.fc .fc-daygrid-event {
+    border-radius: 10px;
+    padding: 2px 6px;
+}
+
+.fc-event-time,
+.fc-event-title {
+    color: #FDFD96 !important;
+    /* Amarillo pastel brillante */
+    text-shadow: 0px 0px 5px rgba(253, 253, 150, 0.3);
+    /* Un pequeño brillo */
+}
+
+/* Dropdown de Perfil */
+.profile-link {
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.dropdown-menu {
+    border: none;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+/* Ajuste para que el logo tenga espacio cuando el texto desaparece */
+@media (max-width: 991px) {
+    .navbar-brand {
+        margin-right: 0;
+        /* Quitamos margen si desaparece el texto */
+    }
+
+    .navbar img {
+        margin-left: 10px;
+        /* Le damos un toque de espacio al logo solito */
+    }
+}

@@ -1,0 +1,446 @@
+body {
+    background: #001D3D;
+    color: #F1FAEE;
+}
+
+.cardbox {
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 18px;
+}
+
+.btn-slot {
+    border-radius: 14px;
+    padding: 14px 12px;
+    font-weight: 800;
+    background: rgba(0, 119, 182, .18);
+    color: #fff;
+    border: 1px solid rgba(0, 119, 182, .35);
+    transition: .15s;
+}
+
+.btn-slot:hover {
+    transform: translateY(-1px);
+    background: rgba(230, 57, 70, .18);
+    border-color: rgba(230, 57, 70, .6);
+}
+
+.badge-service {
+    background: #E63946;
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-weight: 800;
+}
+
+.smallmuted {
+    color: rgba(255, 255, 255, .75);
+}
+
+
+
+
+/* SEGUNDO ESTILO */
+
+:root {
+    --blue-dark: #001D3D;
+    --blue-light: #0077B6;
+    --red-main: #04065dba;
+    --white: #F1FAEE;
+}
+
+body {
+    background-color: var(--blue-dark);
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.calendar-container {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+
+/* Estilos para que el calendario se vea elegante y moderno */
+.fc {
+    /* Base de FullCalendar */
+    --fc-border-color: rgba(255, 255, 255, 0.1);
+    --fc-page-bg-color: transparent;
+    --fc-neutral-bg-color: rgba(0, 0, 0, 0.2);
+    --fc-list-event-hover-bg-color: var(--blue-light);
+}
+
+.fc-col-header-cell {
+    background: var(--blue-light);
+    color: white;
+    padding: 10px 0;
+}
+
+.fc-timegrid-slot {
+    height: 3em !important;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.05) !important;
+}
+
+.fc-event {
+    background-color: var(--red-main) !important;
+    border: none !important;
+    cursor: pointer;
+}
+
+.fc-toolbar-title {
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.fc-button-primary {
+    background-color: var(--blue-light) !important;
+    border: none !important;
+}
+
+.fc-button-primary:hover {
+    background-color: var(--red-main) !important;
+}
+
+.service-badge {
+    background: var(--red-main);
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+
+
+/* Color de los números y días en la cabecera */
+.fc .fc-col-header-cell-cushion {
+    color: #FFFFFF !important;
+    text-transform: capitalize;
+    padding: 8px 0;
+    display: block;
+}
+
+/* Color de las horas en el lateral (8 AM, 9 AM...) */
+.fc .fc-timegrid-slot-label-cushion {
+    color: #FFFFFF !important;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Color del título principal (Mes y Año) */
+.fc .fc-toolbar-title {
+    color: var(--accent) !important;
+    font-size: 1.8rem !important;
+}
+
+/* Fondo de las celdas de tiempo para mejor contraste */
+.fc-timegrid-slot {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Líneas divisorias más marcadas */
+.fc .fc-timegrid-divider {
+    display: none;
+}
+
+.fc td,
+.fc th {
+    border-style: solid !important;
+}
+
+/* Color de los botones (Hoy, Semana, Día) */
+.fc .fc-button {
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+}
+
+
+
+
+
+/* ESTILO BARRA DE NAVEGACION */
+
+:root {
+    --barber-red: #E63946;
+    --barber-blue: #0056b3;
+    --barber-white: #ffffff;
+    --dark-bg: #121212;
+    /* Fondo negro elegante */
+}
+
+/* BARRA SUPERIOR ANIMADA (EL DETALLE DEL BARBER POLE) */
+.navbar::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    /* Una línea delgada muy pro */
+    background: repeating-linear-gradient(-45deg,
+            var(--barber-red) 0%, var(--barber-red) 10%,
+            var(--barber-white) 10%, var(--barber-white) 20%,
+            var(--barber-blue) 20%, var(--barber-blue) 30%);
+    background-size: 200% 100%;
+    animation: barberFlow 5s linear infinite;
+}
+
+.navbar {
+    /* background: #001D3D; */
+    background: rgba(0, 22, 56, 0.95) !important;
+    /* Fondo oscuro transparente */
+    backdrop-filter: blur(10px);
+    /* Efecto esmerilado */
+    border-bottom: 2px solid #BF953F;
+    /* Línea dorada delgada abajo */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+}
+
+@keyframes barberFlow {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+/* LOGO DORADO MEJORADO */
+.navbar-brand {
+    font-family: 'Bebas Neue', 'Impact', sans-serif;
+    font-size: 2.2rem !important;
+    font-weight: 900;
+    text-transform: uppercase;
+    background: linear-gradient(to bottom, #BF953F 20%, #FCF6BA 45%, #B38728 70%, #AA771C 85%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px 0px #000);
+    transform: skew(-10deg);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.navbar-brand:hover {
+    transform: skew(-10deg) scale(1.1) rotate(-2deg);
+    filter: brightness(1.3) drop-shadow(4px 4px 0px #000);
+}
+
+/* ENLACES DEL MENÚ MODERNOS */
+.nav-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #909090 !important;
+    margin: 0 10px;
+    position: relative;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+/* Animación de línea dorada al pasar el mouse */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #BF953F;
+    left: 0;
+    bottom: -5px;
+    transition: 0.4s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.nav-link:hover {
+    color: #BF953F !important;
+}
+
+/* BOTÓN RESERVAR CON PULSACIÓN */
+.btn-reservar {
+    background: #bf943f88 !important;
+    color: #000 !important;
+    font-weight: 800 !important;
+    border-radius: 0px !important;
+    /* Estilo vintage cuadrado */
+    transform: skew(-10deg);
+    padding: 8px 20px !important;
+    box-shadow: 4px 4px 0px #000;
+    animation: pulseGold 2s infinite;
+}
+
+@keyframes pulseGold {
+    0% {
+        box-shadow: 0 0 0 0 rgba(191, 149, 63, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(191, 149, 63, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(191, 149, 63, 0);
+    }
+}
+
+/* MENU MÓVIL */
+.navbar-toggler {
+    border: 1px solid #BF953F !important;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+    /* Hace la hamburguesa blanca */
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: #121212;
+        padding: 20px;
+        text-align: center;
+    }
+}
+
+
+
+
+
+/* ⭐ Diseño profesional Booksy */
+
+.fc-timegrid-slot {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    transition: 0.2s;
+}
+
+.fc-timegrid-slot:hover {
+    background: rgba(255, 255, 255, 0.04);
+}
+
+/* ⭐ Hora lateral estilo Booksy */
+.hora-booksy {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    text-transform: lowercase;
+}
+
+/* ⭐ Línea roja actual */
+.fc .fc-timegrid-now-indicator-line {
+    border-color: #E63946 !important;
+    border-width: 2px;
+}
+
+/* ⭐ Eventos estilo tarjeta */
+.fc-event {
+    border-radius: 8px !important;
+    padding: 4px;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ⭐ Hover slot */
+.fc-timegrid-slot-lane:hover {
+    background: rgba(0, 119, 182, 0.2);
+}
+
+
+
+
+
+
+/* ESTILO DE HORARIOS A SELECIONAR  */
+:root {
+    --bg: #001D3D;
+    --card: rgba(255, 255, 255, .06);
+    --stroke: rgba(255, 255, 255, .12);
+    --text: #F1FAEE;
+    --muted: rgba(241, 250, 238, .72);
+    --blue: #0077B6;
+    --red: #E63946;
+}
+
+.hero-card {
+    background: var(--card);
+    border: 1px solid var(--stroke);
+    border-radius: 22px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, .35);
+    backdrop-filter: blur(10px);
+}
+
+.logo-badge {
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, rgba(0, 119, 182, .35), rgba(230, 57, 70, .25));
+    border: 1px solid rgba(255, 255, 255, .14);
+}
+
+.fw-black {
+    font-weight: 900;
+}
+
+.text-muted-soft {
+    color: var(--muted);
+}
+
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .16), transparent);
+}
+
+.service-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .55rem .95rem;
+    border-radius: 999px;
+    font-weight: 900;
+    letter-spacing: .2px;
+    background: rgba(230, 57, 70, .18);
+    border: 1px solid rgba(230, 57, 70, .45);
+}
+
+.input-premium {
+    background: rgba(255, 255, 255, .07) !important;
+    border: 1px solid rgba(255, 255, 255, .14) !important;
+    color: var(--text) !important;
+    border-radius: 14px !important;
+    padding: .85rem .9rem !important;
+}
+
+.input-premium:focus {
+    box-shadow: 0 0 0 .25rem rgba(0, 119, 182, .22) !important;
+    border-color: rgba(0, 119, 182, .55) !important;
+}
+
+.mini-info {
+    background: rgba(0, 119, 182, .12);
+    border: 1px solid rgba(0, 119, 182, .25);
+    color: var(--text);
+    border-radius: 16px;
+    padding: .9rem 1rem;
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+}
+
+.tag-help {
+    font-size: .85rem;
+    color: var(--muted);
+    border: 1px solid rgba(255, 255, 255, .12);
+    background: rgba(255, 255, 255, .06);
+    padding: .35rem .6rem;
+    border-radius: 999px;
+}
+
+
+
+
